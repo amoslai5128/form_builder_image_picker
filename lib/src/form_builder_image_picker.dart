@@ -80,7 +80,7 @@ class FormBuilderImagePicker extends FormBuilderField<List<dynamic>> {
           initialValue: initialValue,
           name: name,
           validator: validator,
-          valueTransformer: valueTransformer,
+          valueTransformer: (_) => valueTransformer,
           onChanged: onChanged,
           autovalidateMode: autovalidateMode,
           onSaved: onSaved,
@@ -95,7 +95,7 @@ class FormBuilderImagePicker extends FormBuilderField<List<dynamic>> {
             final primaryColor = theme.primaryColor;
 
             return InputDecorator(
-              decoration: state.decoration(),
+              decoration: state.decoration,
               child: Container(
                 height: previewHeight,
                 child: ListView(
